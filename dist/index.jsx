@@ -1,9 +1,7 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const react_1 = require("react");
-const core_1 = require("@material-ui/core");
-const clsx_1 = require("clsx");
-const useStyle = core_1.makeStyles((theme) => ({
+import React, { useEffect, useState } from "react";
+import { Box, makeStyles } from "@material-ui/core";
+import clsx from "clsx";
+const useStyle = makeStyles((theme) => ({
     root: {
         outline: "1px solid #00f",
         "& *": {
@@ -142,27 +140,28 @@ const useStyle = core_1.makeStyles((theme) => ({
         },
     },
 }));
-exports.default = ({ children, disable = false }) => {
+export default ({ children, disable = false }) => {
     const classes = useStyle();
-    const [screenSize, setScreenSize] = react_1.useState(0);
-    react_1.useEffect(() => {
+    const [screenSize, setScreenSize] = useState(0);
+    useEffect(() => {
         window.addEventListener("resize", (args) => setScreenSize(window.innerWidth));
     }, []);
     return (<>
       {disable ? (children) : (<>
-          <core_1.Box className={classes.root}>{children}</core_1.Box>
-          <core_1.Box className={clsx_1.default(classes.ruler, "sm")}/>
-          <core_1.Box className={clsx_1.default(classes.ruler, "md")}/>
-          <core_1.Box className={clsx_1.default(classes.ruler, "lg")}/>
-          <core_1.Box className={clsx_1.default(classes.ruler, "xl")}/>
-          <core_1.Box className={clsx_1.default(classes.monitorWrap)}>
-            <core_1.Box className={clsx_1.default(classes.monitor, "sm")}/>
-            <core_1.Box className={clsx_1.default(classes.monitor, "md")}/>
-            <core_1.Box className={clsx_1.default(classes.monitor, "lg")}/>
-            <core_1.Box className={clsx_1.default(classes.monitor, "xl")}/>
-            <core_1.Box className={clsx_1.default(classes.monitor, "full")}/>
-          </core_1.Box>
-          <core_1.Box className={clsx_1.default(classes.screenSize)}>{screenSize}</core_1.Box>
+          <Box className={classes.root}>{children}</Box>
+          <Box className={clsx(classes.ruler, "sm")}/>
+          <Box className={clsx(classes.ruler, "md")}/>
+          <Box className={clsx(classes.ruler, "lg")}/>
+          <Box className={clsx(classes.ruler, "xl")}/>
+          <Box className={clsx(classes.monitorWrap)}>
+            <Box className={clsx(classes.monitor, "sm")}/>
+            <Box className={clsx(classes.monitor, "md")}/>
+            <Box className={clsx(classes.monitor, "lg")}/>
+            <Box className={clsx(classes.monitor, "xl")}/>
+            <Box className={clsx(classes.monitor, "full")}/>
+          </Box>
+          <Box className={clsx(classes.screenSize)}>{screenSize}</Box>
         </>)}
     </>);
 };
+//# sourceMappingURL=index.jsx.map
