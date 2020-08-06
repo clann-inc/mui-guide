@@ -1,13 +1,12 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "es5",
     "module": "ES2015",
     "moduleResolution": "node",
     "strict": true,
     "skipLibCheck": true,
     "declaration": true,
-    "pretty": true,
-    "jsx": "preserve",
+    "jsx": "react",
     "newLine": "lf",
     "outDir": "dist"
   }

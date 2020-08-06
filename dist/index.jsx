@@ -1,2 +1,2 @@
 import { Box } from "@material-ui/core";
-export default () => <Box>hoge</Box>;
+export default (function () { return <Box>hoge</Box>; });
