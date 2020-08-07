@@ -7,7 +7,7 @@
     "skipLibCheck": true,
     "declaration": true,
     "pretty": true,
-    "jsx": "preserve",
+    "jsx": "react",
     "newLine": "lf",
     "outDir": "dist"
   }
