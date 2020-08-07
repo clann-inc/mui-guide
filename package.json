@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/clann-inc/react-guide.git"
+    "url": "git+ssh://git@github.com/clann-inc/mui-guide.git"
   },
   "author": "clann",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/clann-inc/react-guide/issues"
+    "url": "https://github.com/clann-inc/mui-guide/issues"
   },
-  "homepage": "https://github.com/clann-inc/react-guide#readme",
+  "homepage": "https://github.com/clann-inc/mui-guide#readme",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "clsx": "^1.1.1",
