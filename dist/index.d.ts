@@ -3,5 +3,5 @@ declare type Props = {
     children?: ReactNode;
     disable?: boolean;
 };
-export default function Guide({ children, disable }: Props): {} | null | undefined;
-export {};
+declare const Guide: ({ children, disable }: Props) => {} | null | undefined;
+export default Guide;

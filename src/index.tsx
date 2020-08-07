@@ -148,7 +148,7 @@ type Props = {
   disable?: boolean;
 };
 
-export default function Guide({ children, disable = false }: Props) {
+const Guide = ({ children, disable = false }: Props) => {
   const classes = useStyle();
   const [screenSize, setScreenSize] = useState(0);
 
@@ -179,4 +179,6 @@ export default function Guide({ children, disable = false }: Props) {
       <Box className={clsx(classes.screenSize)}>{screenSize}</Box>
     </>
   );
-}
+};
+
+export default Guide;
