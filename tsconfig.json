@@ -10,6 +10,7 @@
     "jsx": "react",
     "newLine": "lf",
     "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "outDir": "dist"
   }
 }
