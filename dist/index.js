@@ -169,7 +169,7 @@ var useStyle = styles_1.makeStyles(function (theme) {
         }
     });
 });
-function Guide(_a) {
+exports["default"] = (function (_a) {
     var children = _a.children, _b = _a.disable, disable = _b === void 0 ? false : _b;
     var classes = useStyle();
     var _c = react_1.useState(0), screenSize = _c[0], setScreenSize = _c[1];
@@ -191,5 +191,4 @@ function Guide(_a) {
             react_1["default"].createElement(core_1.Box, { className: clsx_1["default"](classes.monitor, "xl") }),
             react_1["default"].createElement(core_1.Box, { className: clsx_1["default"](classes.monitor, "full") })),
         react_1["default"].createElement(core_1.Box, { className: clsx_1["default"](classes.screenSize) }, screenSize)))));
-}
-exports["default"] = Guide;
+});
