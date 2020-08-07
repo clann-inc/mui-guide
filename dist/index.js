@@ -169,7 +169,7 @@ var useStyle = styles_1.makeStyles(function (theme) {
         }
     });
 });
-var Guide = function (_a) {
+function Guide(_a) {
     var children = _a.children, _b = _a.disable, disable = _b === void 0 ? false : _b;
     var classes = useStyle();
     var _c = react_1.useState(0), screenSize = _c[0], setScreenSize = _c[1];
@@ -178,10 +178,7 @@ var Guide = function (_a) {
             return setScreenSize(window.innerWidth);
         });
     }, []);
-    if (disable) {
-        return children;
-    }
-    return (react_1["default"].createElement(react_1["default"].Fragment, null,
+    return (react_1["default"].createElement(react_1["default"].Fragment, null, disable ? (children) : (react_1["default"].createElement(react_1["default"].Fragment, null,
         react_1["default"].createElement(core_1.Box, { className: classes.root }, children),
         react_1["default"].createElement(core_1.Box, { className: clsx_1["default"](classes.ruler, "sm") }),
         react_1["default"].createElement(core_1.Box, { className: clsx_1["default"](classes.ruler, "md") }),
@@ -193,6 +190,6 @@ var Guide = function (_a) {
             react_1["default"].createElement(core_1.Box, { className: clsx_1["default"](classes.monitor, "lg") }),
             react_1["default"].createElement(core_1.Box, { className: clsx_1["default"](classes.monitor, "xl") }),
             react_1["default"].createElement(core_1.Box, { className: clsx_1["default"](classes.monitor, "full") })),
-        react_1["default"].createElement(core_1.Box, { className: clsx_1["default"](classes.screenSize) }, screenSize)));
-};
+        react_1["default"].createElement(core_1.Box, { className: clsx_1["default"](classes.screenSize) }, screenSize)))));
+}
 exports["default"] = Guide;

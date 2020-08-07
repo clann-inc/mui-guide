@@ -1,5 +1,5 @@
 import React, { ReactNode, useEffect, useState } from "react";
-import { Box } from "@material-ui/core";
+import { Box, useMediaQuery } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
 
@@ -148,7 +148,7 @@ type Props = {
   disable?: boolean;
 };
 
-const Guide = ({ children, disable = false }: Props) => {
+export default function Guide({ children, disable = false }: Props) {
   const classes = useStyle();
   const [screenSize, setScreenSize] = useState(0);
 
@@ -157,28 +157,27 @@ const Guide = ({ children, disable = false }: Props) => {
       setScreenSize(window.innerWidth)
     );
   }, []);
-
-  if (disable) {
-    return children;
-  }
-
   return (
     <>
-      <Box className={classes.root}>{children}</Box>
-      <Box className={clsx(classes.ruler, "sm")} />
-      <Box className={clsx(classes.ruler, "md")} />
-      <Box className={clsx(classes.ruler, "lg")} />
-      <Box className={clsx(classes.ruler, "xl")} />
-      <Box className={clsx(classes.monitorWrap)}>
-        <Box className={clsx(classes.monitor, "sm")} />
-        <Box className={clsx(classes.monitor, "md")} />
-        <Box className={clsx(classes.monitor, "lg")} />
-        <Box className={clsx(classes.monitor, "xl")} />
-        <Box className={clsx(classes.monitor, "full")} />
-      </Box>
-      <Box className={clsx(classes.screenSize)}>{screenSize}</Box>
+      {disable ? (
+        children
+      ) : (
+        <>
+          <Box className={classes.root}>{children}</Box>
+          <Box className={clsx(classes.ruler, "sm")} />
+          <Box className={clsx(classes.ruler, "md")} />
+          <Box className={clsx(classes.ruler, "lg")} />
+          <Box className={clsx(classes.ruler, "xl")} />
+          <Box className={clsx(classes.monitorWrap)}>
+            <Box className={clsx(classes.monitor, "sm")} />
+            <Box className={clsx(classes.monitor, "md")} />
+            <Box className={clsx(classes.monitor, "lg")} />
+            <Box className={clsx(classes.monitor, "xl")} />
+            <Box className={clsx(classes.monitor, "full")} />
+          </Box>
+          <Box className={clsx(classes.screenSize)}>{screenSize}</Box>
+        </>
+      )}
     </>
   );
-};
-
-export default Guide;
+}
