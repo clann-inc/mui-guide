@@ -1,6 +1,7 @@
-import React from "react";
+import { ReactNode } from "react";
 declare type Props = {
-    children: React.ReactNode;
+    children?: ReactNode;
+    disable?: boolean;
 };
-declare const _default: ({ children }: Props) => JSX.Element;
-export default _default;
+export default function Guide({ children, disable }: Props): JSX.Element;
+export {};
