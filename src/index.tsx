@@ -1,4 +1,8 @@
 import * as React from "react";
 import { Box } from "@material-ui/core";
 
-export default () => <Box>hoge</Box>;
+type Props = {
+  children: React.ReactNode;
+};
+
+export default ({ children }: Props) => <Box>{children}</Box>;
