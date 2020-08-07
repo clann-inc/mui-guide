@@ -148,7 +148,7 @@ type Props = {
   disable?: boolean;
 };
 
-export default ({ children, disable = false }: Props) => {
+export default function Guide({ children, disable = false }: Props) {
   const classes = useStyle();
   const [screenSize, setScreenSize] = useState(0);
 
@@ -157,27 +157,26 @@ export default ({ children, disable = false }: Props) => {
       setScreenSize(window.innerWidth)
     );
   }, []);
+
+  if (disable) {
+    return children;
+  }
+
   return (
     <>
-      {disable ? (
-        children
-      ) : (
-        <>
-          <Box className={classes.root}>{children}</Box>
-          <Box className={clsx(classes.ruler, "sm")} />
-          <Box className={clsx(classes.ruler, "md")} />
-          <Box className={clsx(classes.ruler, "lg")} />
-          <Box className={clsx(classes.ruler, "xl")} />
-          <Box className={clsx(classes.monitorWrap)}>
-            <Box className={clsx(classes.monitor, "sm")} />
-            <Box className={clsx(classes.monitor, "md")} />
-            <Box className={clsx(classes.monitor, "lg")} />
-            <Box className={clsx(classes.monitor, "xl")} />
-            <Box className={clsx(classes.monitor, "full")} />
-          </Box>
-          <Box className={clsx(classes.screenSize)}>{screenSize}</Box>
-        </>
-      )}
+      <Box className={classes.root}>{children}</Box>
+      <Box className={clsx(classes.ruler, "sm")} />
+      <Box className={clsx(classes.ruler, "md")} />
+      <Box className={clsx(classes.ruler, "lg")} />
+      <Box className={clsx(classes.ruler, "xl")} />
+      <Box className={clsx(classes.monitorWrap)}>
+        <Box className={clsx(classes.monitor, "sm")} />
+        <Box className={clsx(classes.monitor, "md")} />
+        <Box className={clsx(classes.monitor, "lg")} />
+        <Box className={clsx(classes.monitor, "xl")} />
+        <Box className={clsx(classes.monitor, "full")} />
+      </Box>
+      <Box className={clsx(classes.screenSize)}>{screenSize}</Box>
     </>
   );
-};
+}
