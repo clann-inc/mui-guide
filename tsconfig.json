@@ -7,7 +7,7 @@
     "skipLibCheck": true,
     "declaration": true,
     "pretty": true,
-    "jsx": "react",
+    "jsx": "preserve",
     "newLine": "lf",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,

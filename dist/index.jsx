@@ -178,18 +178,22 @@ function Guide(_a) {
             return setScreenSize(window.innerWidth);
         });
     }, []);
-    return (react_1["default"].createElement(react_1["default"].Fragment, null, disable ? (children) : (react_1["default"].createElement(react_1["default"].Fragment, null,
-        react_1["default"].createElement(core_1.Box, { className: classes.root }, children),
-        react_1["default"].createElement(core_1.Box, { className: clsx_1["default"](classes.ruler, "sm") }),
-        react_1["default"].createElement(core_1.Box, { className: clsx_1["default"](classes.ruler, "md") }),
-        react_1["default"].createElement(core_1.Box, { className: clsx_1["default"](classes.ruler, "lg") }),
-        react_1["default"].createElement(core_1.Box, { className: clsx_1["default"](classes.ruler, "xl") }),
-        react_1["default"].createElement(core_1.Box, { className: clsx_1["default"](classes.monitorWrap) },
-            react_1["default"].createElement(core_1.Box, { className: clsx_1["default"](classes.monitor, "sm") }),
-            react_1["default"].createElement(core_1.Box, { className: clsx_1["default"](classes.monitor, "md") }),
-            react_1["default"].createElement(core_1.Box, { className: clsx_1["default"](classes.monitor, "lg") }),
-            react_1["default"].createElement(core_1.Box, { className: clsx_1["default"](classes.monitor, "xl") }),
-            react_1["default"].createElement(core_1.Box, { className: clsx_1["default"](classes.monitor, "full") })),
-        react_1["default"].createElement(core_1.Box, { className: clsx_1["default"](classes.screenSize) }, screenSize)))));
+    return (<>
+      {disable ? (children) : (<>
+          <core_1.Box className={classes.root}>{children}</core_1.Box>
+          <core_1.Box className={clsx_1["default"](classes.ruler, "sm")}/>
+          <core_1.Box className={clsx_1["default"](classes.ruler, "md")}/>
+          <core_1.Box className={clsx_1["default"](classes.ruler, "lg")}/>
+          <core_1.Box className={clsx_1["default"](classes.ruler, "xl")}/>
+          <core_1.Box className={clsx_1["default"](classes.monitorWrap)}>
+            <core_1.Box className={clsx_1["default"](classes.monitor, "sm")}/>
+            <core_1.Box className={clsx_1["default"](classes.monitor, "md")}/>
+            <core_1.Box className={clsx_1["default"](classes.monitor, "lg")}/>
+            <core_1.Box className={clsx_1["default"](classes.monitor, "xl")}/>
+            <core_1.Box className={clsx_1["default"](classes.monitor, "full")}/>
+          </core_1.Box>
+          <core_1.Box className={clsx_1["default"](classes.screenSize)}>{screenSize}</core_1.Box>
+        </>)}
+    </>);
 }
 exports["default"] = Guide;
